@@ -9,6 +9,7 @@ rc=$rc"set rtp+=~/.vim/bundle/Vundle.vim\n"
 rc=$rc"call vundle#begin()\n"
 rc=$rc'"'" let Vundle manage Vundle, required\n"
 rc=$rc"Plugin 'VundleVim/Vundle.vim'\n"
+rc=$rc"Plugin 'Valloric/YouCompleteMe.git'\n"
 rc=$rc"call vundle#end()            "'"'" required\n"
 rc=$rc"filetype plugin indent on    "'"'" required\n"
 testFile="~/.vimrc"
@@ -17,4 +18,5 @@ echo -e $rc > $testFile;
 cat tempFile >> $testFile;
 rm tempFile
 vim +PluginInstall +qall
+vim "+source %" +PluginInstall +qall
 
