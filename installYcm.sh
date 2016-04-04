@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt-get install build-essential cmake
-sudo apt-get install python-dev
+sudo apt-get -y install build-essential cmake
+sudo apt-get -y install python-dev
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 rc="set nocompatible\n"
 rc=$rc"filetype off                  "'"'" required\n"
@@ -21,6 +21,6 @@ sudo apt-add-repository 'deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3
 sudo apt-add-repository 'deb-src http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.7 main'
 wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
 sudo apt-get update
-sudo apt-get install clang lldb libclang-dev
+sudo apt-get -y install clang lldb libclang-dev
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --all --system-libclang
