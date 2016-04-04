@@ -22,5 +22,6 @@ sudo apt-add-repository 'deb-src http://llvm.org/apt/trusty/ llvm-toolchain-trus
 wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
 sudo apt-get update
 sudo apt-get -y install clang lldb libclang-dev
+sudo apt-get -y install mono-xbuild
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --all --system-libclang
+./install.py --clang-completer --system-lib`clang
