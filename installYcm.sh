@@ -17,6 +17,10 @@ echo -e $rc > ~/.vimrc;
 cat tempFile >> ~/.vimrc;
 rm tempFile
 vim +PluginInstall +qall
-vim "+source %" +PluginInstall +qall
+sudo apt-add-repository 'deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.7 main'
+sudo apt-add-repository 'deb-src http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.7 main'
+wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
+sudo apt-get update
+sudo apt-get install clang lldb libclang-dev
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --all
+./install.py --all --system-libclang
