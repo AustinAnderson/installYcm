@@ -24,4 +24,6 @@ sudo apt-get update
 sudo apt-get -y install clang lldb libclang-dev
 sudo apt-get -y install mono-xbuild
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer --system-lib`clang
+./install.py --clang-completer --system-libclang
+wget https://raw.githubusercontent.com/Valloric/ycmd/master/cpp/ycm/.ycm_extra_conf.py
+mv .ycm_extra_conf.py ~
